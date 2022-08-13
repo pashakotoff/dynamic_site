@@ -96,7 +96,6 @@ if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['edit-comment-btn'])) {
         array_push($errMsgs, 'Комментарий должен быть длиннее 5 символов');
     }
 
-
     //Если проверка проведена успешна - отправляем форму в БД
     if(empty($errMsgs)) {
         $comment = [

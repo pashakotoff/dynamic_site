@@ -10,10 +10,7 @@ $adminPostTitleLength = 52;
 $titleSliderLength = 60;
 $limitOfPostsPerPage = 2;
 
-
-
 //ОБЩИЕ ФУНКЦИИ
-
 //Универсальная функция печати
 function printData($val) {
     echo "<pre>";
@@ -38,7 +35,6 @@ function textShortener($postArr, $datakey, $length) {
 }
 
 //ФУНКЦИИ БД
-
 function dbCheckError($query) {
     $errInfo = $query->errorInfo();
     if($errInfo[0] !== PDO::ERR_NONE) {
@@ -307,69 +303,3 @@ function countNumOfActivePostsBySearchTerm($searchTerm) {
     dbCheckError($query);
     return $query->fetchColumn();
 }
-
-
-
-//delete('users', 11)
-//update ('users', '3', $arrData);
-//insert('users', $arrData);
-//printData(selectAll('users', $params));
-//printData(selectOne('users'));
-
-////Выборка постов по категории
-//function selectPostsByCategoryWithAuthor($topic_id) {
-//    global $pdo;
-//    $sql = "SELECT pt.*, ut.user_name, t.name
-//        FROM dynamic_site.posts AS pt
-//        JOIN dynamic_site.users AS ut ON pt.id_user = ut.id
-//        JOIN dynamic_site.topics AS t ON pt.topic_id = t.id
-//        WHERE pt.topic_id=$topic_id AND pt.status=1";
-//    $query = $pdo->prepare($sql);
-//    $query->execute();
-//    dbCheckError($query);
-//    return $query->fetchAll();
-//}
-
-////Выборка постов по автору
-//function selectPostsByAuthor($authorId) {
-//    global $pdo;
-//    $sql = "SELECT pt.*, ut.user_name, t.name
-//        FROM dynamic_site.posts AS pt
-//        JOIN dynamic_site.users AS ut ON pt.id_user = ut.id
-//        JOIN dynamic_site.topics AS t ON pt.topic_id = t.id
-//        WHERE pt.id_user=$authorId AND pt.status=1";
-//    $query = $pdo->prepare($sql);
-//    $query->execute();
-//    dbCheckError($query);
-//    return $query->fetchAll();
-//}
-
-
-////Поиск по заголовкам и содержимому
-//function searchInTitleAndContent($searchTerm) {
-//    $searchTerm = trim(strip_tags(stripcslashes(htmlspecialchars($searchTerm))));
-//    global $pdo;
-//    $sql = "SELECT pt.*, ut.user_name
-//    FROM dynamic_site.posts AS pt
-//    JOIN dynamic_site.users AS ut
-//    ON pt.id_user = ut.id
-//    WHERE pt.status=1
-//    AND pt.title LIKE '%$searchTerm%' OR pt.content LIKE '%$searchTerm%'";
-//    $query = $pdo->prepare($sql);
-//    $query->execute();
-//    dbCheckError($query);
-//    return $query->fetchAll();
-//}
-
-
-////Выборка записей для главной страницы
-//function selectDataForIndexPage() {
-//    global $pdo;
-//    $sql = "SELECT pt.*, ut.user_name FROM dynamic_site.posts AS pt JOIN dynamic_site.users AS ut ON pt.id_user = ut.id WHERE pt.status=1";
-//    $query = $pdo->prepare($sql);
-//    $query->execute();
-//    dbCheckError($query);
-//    return $query->fetchAll();
-//}
-
-?>

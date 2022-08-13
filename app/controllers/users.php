@@ -203,9 +203,6 @@ if($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['update-user-btn'])) {
         $user = selectOne("users", ['id'=>$id]);
         header("location: ". BASE_URL."admin/users/index.php");
     }
-
-
-
 }
 
 //УДАЛЕНИЕ

@@ -5,9 +5,6 @@ include ("../../app/controllers/topics.php");
 
 ?>
 
-
-
-
     <!doctype html>
     <html lang="en">
 <head>

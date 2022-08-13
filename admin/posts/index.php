@@ -1,8 +1,6 @@
 <?php
 include_once "../../path.php";
 include SITE_ROOT."/app/controllers/posts.php";
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,7 +41,6 @@ include("../../app/include/adminheader.php");
         <div class="posts col-9">
             <div class="button row">
                 <a href="<?php echo BASE_URL."admin/posts/create.php"?>" class="col-2 btn btn-success">Создать</a>
-<!--                <a href="index.php" class="col-2 btn btn btn-warning">Редактировать записями</a>-->
             </div>
             <h2>Управление записями</h2>
             <div class="row table-title">
@@ -70,7 +67,7 @@ include("../../app/include/adminheader.php");
     </div>
 </div>
 
-
+<!--FOOTER-->
 <?php
 include("../../app/include/footer.php");
 ?>

@@ -1,15 +1,11 @@
 <?php
 include 'path.php';
 include SITE_ROOT."/app/database/database.php";
-//$postsAll = selectAll('posts');
-//$allPosts = selectDataForIndexPage();
-
 $postsForSlider = selectDataForSlider();
 $page = isset($_GET['page'])? $_GET['page']:1;
 $posts = selectDataForIndexWithLimit($limitOfPostsPerPage, $page);
 $numOfActivePosts = countNumOfActivePosts();
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -95,9 +91,9 @@ include("app/include/header.php");
     </div>
 </div><!--БЛОК MAIN-->
 
-    <!--FOOTER-->
-    <?php include("app/include/footer.php"); ?>
-    <!--FOOTER END-->
+<!--FOOTER-->
+<?php include("app/include/footer.php"); ?>
+<!--FOOTER END-->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
@@ -107,11 +103,3 @@ include("app/include/header.php");
 
 </body>
 </html>
-
-
-<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"-->
-<!--        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"-->
-<!--        crossorigin="anonymous"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"-->
-<!--        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"-->
-<!--        crossorigin="anonymous"></script>-->

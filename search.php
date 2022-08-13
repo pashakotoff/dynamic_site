@@ -41,12 +41,11 @@ $numOfActivePosts = countNumOfActivePostsBySearchTerm($searchTerm);
 
 </head>
 <body>
+
 <!--header-->
 <?php
 include("app/include/header.php");
 ?>
-
-
 
     <!--БЛОК MAIN-->
     <div class="container">
@@ -78,6 +77,7 @@ include("app/include/header.php");
         </div>
     </div><!--БЛОК MAIN-->
 
+    <!--FOOTER-->
     <?php
     include("app/include/footer.php");
     ?>
